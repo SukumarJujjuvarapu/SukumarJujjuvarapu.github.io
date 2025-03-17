@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sukumar Jujjuvarapu</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Reset Styles */
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* CSS Variables */
+    :root {
+      --primary-dark: #23a6d5;
+      --primary-light: #23d5ab;
+      --secondary: #e73c7e;
+      --accent: #ee7752;
+      --dark: #333;
+      --white: #fff;
+    }
+    .profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; /* Smooth animation */
+}
+
+/* Slightly enlarge on hover */
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+/* Make it smaller on smaller screens */
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, var(--accent), var(--secondary), var(--primary-dark), var(--primary-light));
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 120px 20px 60px;
+      background: rgba(0, 0, 0, 0.5);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 3.8rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease both;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header p {
+      font-size: 1.5rem;
+      font-weight: 300;
+      animation: fadeInUp 1s ease both;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Wave Divider */
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 150' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C150,150 350,0 500,50 L500,150 L0,150 Z' style='stroke: none; fill: %23fff;'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background: var(--primary-light);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-light);
+    }
+
+    /* Sections */
+    section {
+      background: rgba(255, 255, 255, 0.97);
+      margin: 40px 0;
+      padding: 60px 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: var(--primary-dark);
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-light);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      border-radius: 2px;
+    }
+
+    section p {
+      font-size: 1.15rem;
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    /* Grid for Projects and Certifications */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary-dark), var(--primary-light));
+      color: var(--white);
+      padding: 10px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Contact Section */
+    #contact a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    #contact a:hover {
+      color: var(--secondary);
+    }
+
+    #contact .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    #contact .social-icons a {
+      font-size: 2.2rem;
+      color: var(--primary-dark);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    #contact .social-icons a:hover {
+      color: var(--secondary);
+      transform: scale(1.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+      header p {
+        font-size: 1.3rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      section {
+        padding: 40px 15px;
+      }
+      .card a {
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="C:\Users\Sukku\Desktop\mine.jpg" alt="Sukumar Jujjuvarapu" class="profile-pic" />
+
+      <h1>Sukumar Jujjuvarapu</h1>
+      <p>B.Tech Graduate | Aspiring AI &amp; Full Stack Developer</p>
+    </div>
+    <div class="wave"></div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://drive.google.com/file/d/1WTNbDf5Bh0KNScM9WFuck0AwZJXk_MLE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
+
+    </ul>
+  </nav>
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>
+      Aspiring AI and Data Science professional with expertise in Python, Machine Learning, and Full-Stack Development.
+      Eager to contribute innovative solutions and drive advancements in cutting-edge technologies.
+    </p>
+  </section>
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card" style="animation-delay: 0.2s;">
+        <h3>Project 1</h3>
+        <p>Surface Lunar Segmentation – Deep Transfer Learning Analysis</p>
+        <a href="https://drive.google.com/drive/folders/1ywkBGJtTrDjntq0CvQ4LrV5oOAVtnrfz?usp=sharing" target="_blank" rel="noopener noreferrer">View Project</a>
+      </div>
+      <div class="card" style="animation-delay: 0.2s;">
+        <h3>Project 2</h3>
+        <p>Unveiling Stress Patterns – Machine Learning Project</p>
+        <a href="https://drive.google.com/file/d/1BEJZLkmYSnZvIUZbyNpFQwoOdhGFgOES/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Project</a>
+      </div>
+    </div>
+  </section>
+  <section id="certifications" class="container">
+    <h2>Certifications</h2>
+    <div class="grid">
+      <div class="card" style="animation-delay: 0.2s;">
+        <h3>IBM - Edx</h3>
+        <p>IBM-edX Certification for Machine Learning</p>
+        <a href="https://drive.google.com/file/d/1BaJ8po0egs0ACJwL0OS8cP1qeNX3PCj6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Certification</a>
+      </div>
+      <div class="card" style="animation-delay: 0.4s;">
+        <h3>Microsoft Azure</h3>
+        <p>Azure Fundamentals</p>
+        <a href="https://drive.google.com/file/d/1BM34IyyeG1rVv4nHiSDBzijiMh3csGqa/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Certification</a>
+      </div>
+      <div class="card" style="animation-delay: 0.6s;">
+        <h3>MongoDB</h3>
+        <p>Node.js Developer Path for Smart Bridge</p>
+        <a href="https://drive.google.com/file/d/1BRWlOV_645NNac-rmaCpiz37XH2-R7Vl/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Certification</a>
+      </div>
+    </div>
+    <div class="card" style="animation-delay: 0.6s;">
+      <h3>IBM SkillsBuild</h3>
+      <p>More Relavant Certifications Artificial Intelligence </p>
+      <a href="https://drive.google.com/drive/folders/1cZdYRiSTuhSVsE5MVNQkdbOW9qp1YMpc?usp=drive_link" target="_blank" rel="noopener noreferrer">View Certification</a>
+    </div>
+  </div>
+  </section>
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p>Let's connect and create something amazing!</p>
+    <p>Email: <a href="mailto:sukkusukumar6343@gmail.com">sukkusukumar6343@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/sukumar-jujjuvarapu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/SukumarJujjuvarapu" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+</body>
+</html>
